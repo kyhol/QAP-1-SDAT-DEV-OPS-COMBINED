@@ -66,7 +66,34 @@ public class MenuSystem {
         }
         return true;
     }
-    private void recordMood() {}
+    private void recordMood() {
+        System.out.print("Enter mood rating (1-5, where 1 is lowest and 5 is highest): ");
+        try {
+            int rating = Integer.parseInt(scanner.nextLine());
+            if (rating < 1 || rating > 5) {
+                System.out.println("Invalid rating. Must be between 1 and 5.");
+                return;
+            }
+
+            MoodEntry entry = new MoodEntry(LocalDate.now(), rating);
+
+            System.out.println("Enter symptoms (or press Enter to skip):");
+            String symptom;
+            while (true) {
+                System.out.print("Symptom (or press Enter to finish): ");
+                symptom = scanner.nextLine().trim();
+                if (symptom.isEmpty()) {
+                    break;
+                }
+                entry.addSymptom(symptom);
+            }
+
+            tracker.addMoodEntry(entry);
+            System.out.println("Mood recorded successfully!");
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input. Please enter a number.");
+        }
+    }
     private void viewMoodHistory() {
 
     }
