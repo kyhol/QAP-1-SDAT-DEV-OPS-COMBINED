@@ -95,11 +95,41 @@ public class MenuSystem {
         }
     }
     private void viewMoodHistory() {
-
+        System.out.println("\n=== Mood History ===");
+        if (tracker.getMoodHistory().isEmpty()) {
+            System.out.println("No mood entries recorded yet.");
+            return;
+        }
+        tracker.getMoodHistory().forEach(entry ->
+                System.out.printf("Date: %s, Mood: %d, Symptoms: %s%n",
+                        entry.getDate(),
+                        entry.getMoodRating(),
+                        String.join(", ", entry.getSymptoms()))
+        );
     }
-    private void viewAverageMood() {}
-    private void viewCommonSymptoms() {}
-    private void viewMood() {}
-    public static void main(String[] args) {}
 
+    private void viewAverageMood() {
+        double average = tracker.getAverageMoodRating();
+        if (average == 0.0) {
+            System.out.println("No mood entries recorded yet.");
+            return;
+        }
+        System.out.printf("Average Mood Rating: %.2f%n", average);
+    }
+
+    private void viewCommonSymptoms() {
+        System.out.println("\n=== Common Symptoms ===");
+        Map<String, Integer> symptoms = tracker.getCommonSymptoms();
+        if (symptoms.isEmpty()) {
+            System.out.println("No symptoms recorded yet.");
+            return;
+        }
+        symptoms.forEach((symptom, count) ->
+                System.out.printf("%s: reported %d time(s)%n", symptom, count)
+        );
+    }
+
+    public static void main(String[] args) {
+        new MenuSystem().start();
+    }
 }
