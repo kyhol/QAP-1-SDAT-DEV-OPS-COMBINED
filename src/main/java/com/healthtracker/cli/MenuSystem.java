@@ -80,12 +80,18 @@ public class MenuSystem {
             System.out.println("Enter symptoms (or press Enter to skip):");
             String symptom;
             while (true) {
-                System.out.print("Symptom (or press Enter to finish): ");
+                System.out.print("Symptom (or press Enter to continue): ");
                 symptom = scanner.nextLine().trim();
                 if (symptom.isEmpty()) {
                     break;
                 }
                 entry.addSymptom(symptom);
+            }
+
+            System.out.print("Would you like to add any notes about how you're currently feeling? (or press Enter to skip): ");
+            String notes = scanner.nextLine().trim();
+            if (!notes.isEmpty()) {
+                entry.setNotes(notes);
             }
 
             tracker.addMoodEntry(entry);
@@ -101,10 +107,13 @@ public class MenuSystem {
             return;
         }
         tracker.getMoodHistory().forEach(entry ->
-                System.out.printf("Date: %s, Mood: %d, Symptoms: %s%n",
+                System.out.printf("Date: %s, Mood: %d, Symptoms: %s%s%n",
                         entry.getDate(),
                         entry.getMoodRating(),
-                        String.join(", ", entry.getSymptoms()))
+                        String.join(", ", entry.getSymptoms()),
+                        entry.getNotes() != null && !entry.getNotes().isEmpty()
+                                ? ", Notes: " + entry.getNotes()
+                                : "")
         );
     }
 
