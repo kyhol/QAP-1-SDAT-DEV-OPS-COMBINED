@@ -46,16 +46,6 @@ public class MoodEntry {
         }
     }
 
-    public void addCopingStrategy(String strategy) {
-        if (strategy != null && !strategy.trim().isEmpty()) {
-            copingStrategies.add(strategy);
-        }
-    }
-
-    public List<String> getCopingStrategies() {
-        return new ArrayList<>(copingStrategies);
-    }
-
     public String getNotes() {
         return notes;
     }
