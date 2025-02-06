@@ -1,0 +1,15 @@
+1. Explain how your code meets clean code practices by using at least 3 examples of your own code. Screenshots should be used
+
+2. Explain your project. What it does, how it works. Explain the test cases you used
+
+Records moods over time,
+
+3. Outline the needed dependencies. Where did you get them from?
+
+I used J unit for testing and Surefire for automated testing
+
+https://mvnrepository.com/
+
+4. If you had any problems the QAP please explain what happened.
+
+Mental health Emergency - still not 100%. Not related to the QAP but hindered my ability by a significant amount

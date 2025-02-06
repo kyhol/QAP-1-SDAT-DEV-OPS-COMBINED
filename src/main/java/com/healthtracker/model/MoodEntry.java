@@ -8,7 +8,6 @@ public class MoodEntry {
     private LocalDate date;
     private int moodRating;
     private List<String> symptoms;
-    private List<String> copingStrategies;
     private String notes;
 
     public MoodEntry(LocalDate date, int moodRating) {
@@ -16,7 +15,6 @@ public class MoodEntry {
         this.date = date;
         this.moodRating = moodRating;
         this.symptoms = new ArrayList<>();
-        this.copingStrategies = new ArrayList<>();
     }
 
     private void validateMoodRating(int rating) {
