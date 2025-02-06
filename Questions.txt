@@ -1,7 +1,32 @@
-1. Explain how your code meets clean code practices by using at least 3 examples of your own code. Screenshots should be used
+1. Explain how your code meets clean code practices by using at least 3 examples of your own code.
+    Examples:
+    testAddMoodEntry
+    testAddNullEntry
+    testGetAverageMoodRating
+
+    Methods of testing that are explanatory in naming
+
+    Method Examples:
+    getMenuChoice
+    handleChoice
+    validateMoodRating
+    getCommonSymptoms
+
+    All methods named as explanations
+    With each method handling a single responsibility
+    Handles errors well
+    maintains consistent formatting to avoid duplication
+
 
 2. Explain your project. What it does, how it works. Explain the test cases you used
 
+Run Program
+
+enter mood int 1-5
+Give symptom on how you're feeling, whether anxious/happy etc. Then be able to add a note on your how you're feeling.
+get your average mood
+get common symptoms
+when viewing mood history get timestamp
 Records moods over time,
 
 3. Outline the needed dependencies. Where did you get them from?
@@ -12,4 +37,5 @@ https://mvnrepository.com/
 
 4. If you had any problems the QAP please explain what happened.
 
-Mental health Emergency - still not 100%. Not related to the QAP but hindered my ability by a significant amount
+Mental health Emergency - still not 100%. Not related to the QAP but hindered my ability by a
+significant amount so this is by far my worst project to date lol
